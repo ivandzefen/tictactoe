@@ -8,14 +8,14 @@ This is a simple command-line implementation of the classic Tic Tac Toe game in 
    - Make sure you have Python installed on your machine. You can download Python from [python.org](https://www.python.org/).
 
 2. **Download the game:**
-   - Copy the `tic_tac_toe.py` file to your local machine.
+   - Copy the `tictactoe.py` file to your local machine.
 
 3. **Run the game:**
    - Open your command line interface (CLI).
-   - Navigate to the directory where you saved `tic_tac_toe.py`.
+   - Navigate to the directory where you saved `tictactoe.py`.
    - Run the script using Python:
      ```sh
-     python tic_tac_toe.py
+     python tictactoe.py
      ```
 
 4. **Game Instructions:**
