@@ -73,8 +73,12 @@ def hard_ai_move(board):
 
 def tic_tac_toe():
     difficulty=-1
-    while not any([difficulty==0,difficulty==1]):
-        difficulty=int(input("select difficylty  0(easy) 1(hard): "))
+    num_players=0
+    while not any([num_players==1,num_players==2]):
+        num_players=int(input("select number of players  1(one player) 2(two players): "))
+    if num_players==1:
+        while not any([difficulty==0,difficulty==1]):
+            difficulty=int(input("select difficylty  0(easy) 1(hard): "))
     board = [[" " for _ in range(3)] for _ in range(3)]    
     current_player = "X"
 
@@ -108,20 +112,21 @@ def tic_tac_toe():
         
         # Switch player
         current_player = "O" if current_player == "X" else "X"
-        if difficulty == 0: row, col = easy_ai_move(board)
-        else: row,col = hard_ai_move(board)
-        board[row][col] = current_player
-        if check_winner(board, current_player):
-            print_board(board)
-            print(f"Player {current_player} wins!")
-            break
-
-        # Check for draw
-        if is_board_full(board):
-            print_board(board)
-            print("It's a draw!")
-            break
-        current_player = "O" if current_player == "X" else "X"
+        if num_players==1:
+            if difficulty == 0: row, col = easy_ai_move(board)
+            else: row,col = hard_ai_move(board)
+            board[row][col] = current_player
+            if check_winner(board, current_player):
+                print_board(board)
+                print(f"Player {current_player} wins!")
+                break
+    
+            # Check for draw
+            if is_board_full(board):
+                print_board(board)
+                print("It's a draw!")
+                break
+            current_player = "O" if current_player == "X" else "X"
         
 if __name__ == "__main__":
     tic_tac_toe()
