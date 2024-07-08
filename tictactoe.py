@@ -65,17 +65,19 @@ def get_best_move(board):
             best_move = move
     return best_move
 
-def easy_ai_move():
+def easy_ai_move(board):
     return random.choice(get_available_moves(board))
 
-def hard_ai_move():
+def hard_ai_move(board):
     return get_best_move(board)
 
-board = [[" " for _ in range(3)] for _ in range(3)]
+
 
 def tic_tac_toe():
-    difficulty=input("select difficylty  0(easy) 1(hard): ")
-    
+    difficulty=-1
+    while not any([difficulty==0,difficulty==1])
+        difficulty=input("select difficylty  0(easy) 1(hard): ")
+    board = [[" " for _ in range(3)] for _ in range(3)]    
     current_player = "X"
 
     while True:
@@ -108,8 +110,8 @@ def tic_tac_toe():
         
         # Switch player
         current_player = "O" if current_player == "X" else "X"
-        if difficulty == 0: row, col = easy_ai_move()
-        else: row,col = hard_ai_move()
+        if difficulty == 0: row, col = easy_ai_move(board)
+        else: row,col = hard_ai_move(board)
         board[row][col] = current_player
         if check_winner(board, current_player):
             print_board(board)
