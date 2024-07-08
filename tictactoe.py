@@ -70,10 +70,12 @@ def easy_ai_move():
 
 def hard_ai_move():
     return get_best_move(board)
-    
+
+board = [[" " for _ in range(3)] for _ in range(3)]
+
 def tic_tac_toe():
     difficulty=input("select difficylty  0(easy) 1(hard): ")
-    board = [[" " for _ in range(3)] for _ in range(3)]
+    
     current_player = "X"
 
     while True:
