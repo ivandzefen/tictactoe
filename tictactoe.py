@@ -25,9 +25,6 @@ def get_available_moves(board):
     
     return [(i,j) for i in range(3) for j in range(3) if board[i][j] == ' ']
 
-def make_move(board, position, player):
-    board[position] = player
-
 def minimax(board, depth, is_maximizing):
     if check_winner(board, 'O'):
         return 1
@@ -49,7 +46,7 @@ def minimax(board, depth, is_maximizing):
         for move in get_available_moves(board):
             board[move[0]][move[1]] = 'X'
             score = minimax(board, depth + 1, True)
-            board[move] = ' '
+            board[move[0]][move[1]] = ' '
             best_score = min(score, best_score)
         return best_score
 
