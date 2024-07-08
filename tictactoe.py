@@ -76,7 +76,7 @@ def hard_ai_move(board):
 def tic_tac_toe():
     difficulty=-1
     while not any([difficulty==0,difficulty==1]):
-        difficulty=input("select difficylty  0(easy) 1(hard): ")
+        difficulty=int(input("select difficylty  0(easy) 1(hard): "))
     board = [[" " for _ in range(3)] for _ in range(3)]    
     current_player = "X"
 
